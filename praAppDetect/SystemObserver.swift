@@ -49,14 +49,6 @@ public class SystemObserver: NSObject, NSApplicationDelegate {
             SystemObserver.instance?.handleSignal(signal)
             exit(signal)
         }
-        signal(SIGINT) { signal in
-            SystemObserver.instance?.handleSignal(signal)
-            exit(signal)
-        }
-        signal(SIGHUP) { signal in
-            SystemObserver.instance?.handleSignal(signal)
-            exit(signal)
-        }
     }
     
     private func handleSignal(_ signal: Int32) {
